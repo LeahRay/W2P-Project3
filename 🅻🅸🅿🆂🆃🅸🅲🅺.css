@@ -15,6 +15,23 @@ body, html {
     height: 100vh; 
     width: 100vw;
 }
+.main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    gap: 1%; /* Adjust this value to control the gap between the buttons and the window */
+}
+
+.color-palette {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* aligns the buttons to the start (left) */
+    justify-content: center;
+    gap: 10px;
+    width: 100px; /* Give a fixed width for the buttons container */
+    padding-left: 1%; /* pushes the buttons close to the left edge. Adjust as necessary */
+}
 
 .centered-rectangle-window {
     width: 40vw;
@@ -40,6 +57,7 @@ body, html {
     height: auto;
     transform-origin: top;
 }
+
 
 .svg3 {
     display: block;
@@ -102,6 +120,7 @@ body, html {
     height: 100%;
     transform-origin: top;
 }
+
 
 /* Media query for phone screen size */
 @media (max-width: 480px) {
