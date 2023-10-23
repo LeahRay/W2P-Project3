@@ -9,11 +9,11 @@ body, html {
     overflow: hidden;
 }
 .mobile-wrapper {
-    overflow-x: scroll;
-    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
     width: 100vw;
-    height: 100vh;
-    white-space: nowrap;
 }
 
 .centered-rectangle-window {
