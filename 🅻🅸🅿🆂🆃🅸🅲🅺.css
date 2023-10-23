@@ -6,6 +6,14 @@ body, html {
     align-items: center;
     justify-content: center;
     background-color: black;
+    overflow: hidden;
+}
+.mobile-wrapper {
+    overflow-x: scroll;
+    overflow-y: hidden;
+    width: 100vw;
+    height: 100vh;
+    white-space: nowrap;
 }
 
 .centered-rectangle-window {
@@ -17,6 +25,7 @@ body, html {
     overflow-y: scroll;
     padding: 0;
     overflow-x: hidden;
+    white-space: normal;
 }
 
 .svg-container {
@@ -96,16 +105,23 @@ body, html {
 
 /* Media query for phone screen size */
 @media (max-width: 480px) {
-    .centered-rectangle-window {
-        width: 90vh; /* use viewport height since we are rotating */
-        height: 20vw; /* adjust as needed */
-    }
-    
-    .svg-container {
+    .mobile-wrapper {
         transform: rotate(-90deg);
-        width: calc(100% - 15px); /* considering scrollbar width */
-        height: 100%;
-        overflow: scroll;
-        overflow-x: hidden;
+        transform-origin: left bottom;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 100vw; /* Switching to viewport width because of rotation */
+        width: 100vh;  /* Same here */
+        overflow-y: hidden; /* We don't want vertical scrolling */
+    }
+
+    .centered-rectangle-window {
+        transform: rotate(90deg);
+        transform-origin: left bottom;
+        display: inline-block;
+        width: calc(100vh - 50px);  /* Adjust for mobile screens, considering some offset for usability */
+        height: 100vw;  /* Adjust based on your need */
+        white-space: nowrap;  /* To ensure items don't wrap */
     }
 }
