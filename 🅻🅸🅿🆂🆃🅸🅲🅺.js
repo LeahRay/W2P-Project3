@@ -24,9 +24,28 @@ svgFillColorPicker.addEventListener('input', function(event) {
     let newColor = event.target.value;
     
     // Get all SVG elements with specific classes and change their fill color
-    let svgElements = document.querySelectorAll('.st0, .st0_2, .st1_2, .st2_2, .st3_2, .st4_2');
+    let svgElements = document.querySelectorAll('.st0, .st0_2, .st1_2, .st2_2, .st3_2, st4_1, .st4_2');
     
     svgElements.forEach(function(element) {
-        element.style.fill = newColor;
+        element.style.fill = newColor;  // Change fill color for SVGs
     });
+    
+    // Get all box elements with class st0 and change their background color
+    let boxElements = document.querySelectorAll('.st0');
+    
+    boxElements.forEach(function(element) {
+        element.style.backgroundColor = newColor;  // Change background color for boxes
+    });
+
+    let strokeElements = document.querySelectorAll('.st4_1');
+    
+    strokeElements.forEach(function(element) {
+        element.style.stroke = newColor;  // Change stroke color
+    });
+});
+
+document.querySelector('.rectangle').addEventListener('click', function() {
+    if (window.innerWidth <= 768) {
+        document.querySelector('.svg3-1').style.display = 'block';
+    }
 });
