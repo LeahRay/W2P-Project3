@@ -49,3 +49,6 @@ document.querySelector('.rectangle').addEventListener('click', function() {
         document.querySelector('.svg3-1').style.display = 'block';
     }
 });
+
+document.getElementById('svg5-2').style.display = 'none';
+
