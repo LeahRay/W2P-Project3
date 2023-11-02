@@ -50,5 +50,100 @@ document.querySelector('.rectangle').addEventListener('click', function() {
     }
 });
 
-document.getElementById('svg5-2').style.display = 'none';
+document.addEventListener("DOMContentLoaded", function() {
 
+    // For box1
+    let box1 = document.querySelector('.box1');
+    let modalBox1 = document.getElementById('modalBox1');
+
+    box1.addEventListener('click', function() {
+        modalBox1.style.display = "block";
+    });
+
+    let box2 = document.querySelector('.box2');
+    let modalBox2 = document.getElementById('modalBox2');
+
+    box2.addEventListener('click', function() {
+        modalBox2.style.display = "block";
+    });
+    let box3 = document.querySelector('.box3');
+    let modalBox3 = document.getElementById('modalBox3');
+
+    box3.addEventListener('click', function() {
+        modalBox3.style.display = "block";
+    });
+    let box4 = document.querySelector('.box4');
+    let modalBox4 = document.getElementById('modalBox4');
+
+    box4.addEventListener('click', function() {
+        modalBox4.style.display = "block";
+    });
+    let box5 = document.querySelector('.box5');
+    let modalBox5 = document.getElementById('modalBox5');
+
+    box5.addEventListener('click', function() {
+        modalBox5.style.display = "block";
+    });
+
+    let box6 = document.querySelector('.box6');
+    let modalBox6 = document.getElementById('modalBox6');
+
+    box6.addEventListener('click', function() {
+        modalBox6.style.display = "block";
+    });
+
+    let box7 = document.querySelector('.box7');
+    let modalBox7 = document.getElementById('modalBox7');
+
+    box7.addEventListener('click', function() {
+        modalBox7.style.display = "block";
+    });
+    let box8 = document.querySelector('.box8');
+    let modalBox8 = document.getElementById('modalBox8');
+
+    box8.addEventListener('click', function() {
+        modalBox8.style.display = "block";
+    });
+
+
+
+
+
+
+    // Close modal when the x is clicked
+    let closeButtons = document.querySelectorAll(".close-button");
+    closeButtons.forEach(function(button) {
+        button.addEventListener("click", function(event) {
+            let modal = event.target.closest(".modal");
+            modal.style.display = "none";
+        });
+    });
+    
+    // Close modals when anywhere outside the modal is clicked
+    window.addEventListener('click', function(event) {
+        if (event.target.className === 'modal') {
+            event.target.style.display = "none";
+        }
+    });
+    let saveButtons = document.querySelectorAll(".save-button");
+    saveButtons.forEach(function(button) {
+        button.addEventListener("click", function(event) {
+            let modalContent = event.target.closest(".modal-content");
+            
+            // Grab input values
+            let dateValue = modalContent.querySelector("input[type='date']").value;
+            let timeValue = modalContent.querySelector("input[type='time']").value;
+            let eventValue = modalContent.querySelector("input[type='text']").value;
+
+            // Log them (or do whatever you want with them)
+            console.log("Date:", dateValue);
+            console.log("Time:", timeValue);
+            console.log("Event:", eventValue);
+
+            // Close modal after saving (optional)
+            let modal = event.target.closest(".modal");
+            modal.style.display = "none";
+        });
+    });
+
+});
